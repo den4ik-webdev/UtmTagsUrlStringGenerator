@@ -1,0 +1,353 @@
+// out: ../styles.css, sourceMap: true, compress: true
+
+@use '_helpers/_functions' as func;
+@use '_helpers/_mixins' as mixin;
+
+*,
+::after,
+::before {
+	margin: 0;
+	padding: 0;
+	letter-spacing: normal;
+	-moz-box-sizing: border-box;
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+}
+
+html {
+	tab-size: 4;
+	overflow: auto;
+	overflow-y: scroll;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	width: 100%;
+	height: auto;
+	min-height: 100vh;
+
+	// https://developer.mozilla.org/en-US/docs/Web/CSS/scrollbar-gutter
+	// https://doka.guide/css/scrollbar-gutter/
+	// scrollbar-gutter: stable;
+
+	-webkit-text-size-adjust: none;
+	-moz-text-size-adjust: none;
+	-ms-text-size-adjust: none;
+	text-size-adjust: none;
+
+	// -webkit-font-smoothing: antialiased;
+	// -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	font-family: system-ui, -apple-system, BlinkMacSystemFont, Roboto, 'Segoe UI', Ubuntu, 'Open Sans', sans-serif;
+	font-size: func.rem( 18 );
+	line-height: 1.4;
+	font-weight: 400;
+	font-style: normal;
+	color: #222;
+	background-color: #fff;
+
+	@media ( max-width: func.rem( 767.98 ) ) {
+		font-size: func.rem( 16 );
+	}
+}
+
+.container {
+	margin: 0 auto;
+	padding: func.rem(30) func.rem(20);
+	min-width: func.rem(335);
+
+	@media ( min-width: func.rem( 1000 ) )
+	{
+		width: func.rem( 980 );
+	}
+
+	@media ( max-width: func.rem( 999.98 ) )
+	{
+		width: 100%;
+	}
+}
+
+input,
+textarea {
+	width: 100%;
+	border-radius: .6em;
+	padding: .5em .75em;
+	margin: 0;
+	border: 1px solid #a9c3ca;
+	font-family: inherit;
+	font-size: var(--app-field-text-size);
+	line-height: 1.25;
+	font-weight: 400;
+	transition: 0.15s ease-in-out;
+	outline: 0;
+	vertical-align: top;
+	background: #fff;
+	touch-action: manipulation;
+
+	&:focus {
+		border-color: #1470f5;
+		box-shadow: 0 0 0 .2rem rgba(20, 112, 245, 0.25);
+	}
+
+	@media ( max-width: func.rem( 599.98 ) )
+	{
+		width: 100%;
+	}
+}
+
+input {
+	--app-field-text-size: #{func.rem( 15 )};
+
+	@media ( max-width: func.rem( 479 ) )
+	{
+		--app-field-text-size: #{func.rem( 13.5 )};
+	}
+}
+
+textarea {
+	--app-field-text-size: #{func.rem( 13.5 )};
+
+	max-width: 100%;
+	overflow: auto;
+
+	@media ( max-width: func.rem( 479 ) )
+	{
+		--app-field-text-size: #{func.rem( 12 )};
+	}
+}
+
+.btn {
+	&-primary {
+		--app-button-text-color: #fff;
+		--app-button-border-color: #0959cd;
+		--app-button-background-color-primary: #1470f5;
+		--app-button-background-color-secondary: #458ef7;
+		--app-button-background-color: #1470f5;
+
+		&:hover,
+		&:focus,
+		&:active {
+			--app-button-text-color: #fff;
+			--app-button-border-color: #0959cd;
+			--app-button-shadow-color-focus: rgba(20, 112, 245, 0.35);
+			--app-button-background-color: #1470f5;
+		}
+	}
+
+	&-clear {
+		--app-button-text-color: #1c1a14;
+		--app-button-border-color: #bdbdbd;
+		--app-button-background-color-primary: initial;
+		--app-button-background-color-secondary: initial;
+		--app-button-background-color: #f0f0f0;
+
+		&:hover,
+		&:focus,
+		&:active {
+			--app-button-text-color: #1c1a14;
+			--app-button-border-color: #bdbdbd;
+			--app-button-shadow-color-focus: rgba(164, 164, 164, 0.25);
+			--app-button-background-color: #e0e0e0;
+		}
+	}
+}
+
+button {
+	--app-button-text-size: 1rem;
+	--app-button-text-line-height: 1.25;
+	--app-button-text-weight: 400;
+
+	cursor: pointer;
+	display: inline-block;
+	vertical-align: middle;
+	max-width: 100%;
+	min-width: auto;
+	width: auto;
+	text-align: center;
+	font-weight: 400;
+	font-family: "Noto Sans", -apple-system, system-ui, sans-serif;
+	font-size: var(--app-button-text-size);
+	line-height: var(--app-button-text-line-height);
+	text-shadow: none;
+	background-color: var(--app-button-background-color);
+	color: var(--app-button-text-color) !important;
+	border-radius: 0.75em;
+	border-width: 1px 1px 3px;
+	border-style: solid;
+	border-color: var(--app-button-border-color);
+	padding: 0.55em 2em;
+	margin: 0.25rem 0.125rem;
+	text-decoration: none;
+	transition: 0.15s linear;
+	outline: 0;
+	user-select: none;
+
+	appearance: button;
+	touch-action: manipulation;
+
+	background-size: 200%;
+	background-image: linear-gradient(to right, var(--app-button-background-color-primary, none) 0%, var(--app-button-background-color-secondary, none) 51%, var(--app-button-background-color-primary, none) 100%);
+
+	&:hover,
+	&:focus,
+	&:active {
+		background-position: 100% 50%;
+	}
+
+	&:focus,
+	&:focus-visible {
+		box-shadow: 0 0 0 .2rem var(--app-button-shadow-color-focus);
+	}
+
+	&:active {
+		filter: brightness(110%);
+	}
+
+	@media ( max-width: 479px )
+	{
+		--app-button-text-size: func.rem( 16 );
+	}
+}
+
+.fields {
+	margin-bottom: .75em;
+	display: flex;
+
+	.col {
+		display: flex;
+		flex-direction: column;
+		gap: .75em;
+	}
+
+	@media ( min-width: func.rem( 600 ) )
+	{
+		flex-direction: row;
+		justify-content: space-between;
+		gap: 1.75em;
+
+		.col {
+			width: 50%;
+		}
+	}
+
+	@media ( max-width: func.rem( 599.98 ) )
+	{
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: flex-start;
+		gap: .75em;
+
+		.col {
+			width: 100%;
+		}
+	}
+}
+
+.action {
+	text-align: center;
+	margin-bottom: .75em;
+
+	.field {
+		display: flex;
+	}
+
+	button {
+		width: 50%;
+		margin: 0;
+		padding-right: .75em;
+		padding-left: .75em;
+	}
+
+	@media ( max-width: func.rem( 599.98 ) )
+	{
+		padding-top: 1em;
+
+		.label {
+			display: none;
+		}
+
+		.field {
+		}
+	}
+
+	@media ( max-width: func.rem( 399.98 ) )
+	{
+		.field {
+			flex-direction: column;
+			gap: .75em
+		}
+
+		button {
+			width: 100%;
+		}
+	}
+
+	@media ( min-width: func.rem( 400 ) )
+	{
+		.field {
+			flex-direction: row;
+			justify-content: space-between;
+			gap: 1em
+		}
+	}
+}
+
+.field {
+	.note {
+		padding-top: .15em;
+		font-size: .75em;
+		// font-style: italic;
+		line-height: 1.2;
+		color: #202020;
+
+		strong {
+			font-weight: 500;
+		}
+	}
+}
+
+label {
+	font-weight: 500;
+	color: #222;
+}
+
+.item {
+	display: flex;
+	flex-direction: column;
+	gap: .25em;
+}
+
+.required-sign {
+	font-weight: 700;
+	color: #f00;
+}
+
+.label {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: flex-start;
+	gap: .25em;
+
+	i {
+		display: block;
+		cursor: help;
+		font-style: normal;
+
+		&::before {
+			display: block;
+			vertical-align: middle;
+			content: '[?]';
+			color: #0e59c9;
+			font-size: func.rem(14);
+			line-height: 1;
+			text-align: center;
+			font-weight: 700;
+		}
+	}
+}

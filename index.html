@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+	<title>UTM-метки - генератор url query_string</title>
+	<link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+	<main>
+		<section class="container">
+			<div class="fields">
+				<div class="col">
+					<div class="item">
+						<div class="label">
+							<label for="utm_source"><span class="required-sign">*</span> utm_source</label>
+							<i class="fa fa-info" title="Источник перехода или платформа продвижения. Этот параметр указывает, откуда пришел посетитель. Он помогает определить, из какого источника пришел трафик: поисковая система, социальная сеть или другой сайт."></i>
+						</div>
+						<div class="field">
+							<input type="text" name="utm_source" id="utm_source" class="request-field" placeholder="Источник трафика">
+							<div class="note"><strong>Обязательно.</strong> <em>Например: google, yandex и т.д.</em></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">
+							<label for="utm_medium"><span class="required-sign">*</span> utm_medium</label>
+							<i class="fa fa-info" title="Тип продвижения. Этот параметр определяет канал, через который пришел посетитель. Он указывает, какой тип маркетинга был использован: платная реклама, рассылка по электронной почте и т.д."></i>
+						</div>
+						<div class="field">
+							<input type="text" name="utm_medium" id="utm_medium" class="request-field" placeholder="Тип или канал трафика">
+							<div class="note"><strong>Обязательно.</strong> <em>Например: cpc, email, social и т.д.</em></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">
+							<label for="utm_campaign"><span class="required-sign">*</span> utm_campaign</label>
+							<i class="fa fa-info" title="Название кампании. Этот параметр используется для идентификации конкретной маркетинговой кампании. Он позволяет различать кампании и анализировать их эффективность."></i>
+						</div>
+						<div class="field">
+							<input type="text" name="utm_campaign" id="utm_campaign" class="request-field" placeholder="Название рекламной кампании">
+							<div class="note"><strong>Обязательно.</strong> <em>Например: spring_sale, brand_awareness и т.д.</em></div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="item">
+						<div class="label">
+							<label for="utm_content">utm_content</label>
+							<i class="fa fa-info" title="Дополнительная информация, которая помогает различать объявления. Если у вас несколько ссылок ведут на один URL (например, в email-рассылке две кнопки или разные ссылки в соцсетях), используйте utm_content, чтобы отследить, по какой ссылке был совершен переход. Можно использовать несколько значений, разделяя их `|` или `.`"></i>
+						</div>
+						<div class="field">
+							<input type="text" name="utm_content" id="utm_content" class="request-field" placeholder="Содержание">
+							<div class="note"><strong>Опционально.</strong> <em>Например: knopka-kupit и т.д.</em></div>
+						</div>
+					</div>
+					<div class="item">
+						<div class="label">
+							<label for="utm_term">utm_term</label>
+							<i class="fa fa-info" title="Ключевая фраза. Этот параметр используется в основном для рекламных кампаний. Он указывает ключевое слово, по которому был совершен клик. Помогает понять, какие ключевые слова привлекают трафик."></i>
+						</div>
+						<div class="field">
+							<input type="text" name="utm_term" id="utm_term" class="request-field" placeholder="Ключевое слово">
+							<div class="note"><strong>Опционально.</strong> <em>Например: buy+shoes и т.д.</em></div>
+						</div>
+					</div>
+					<div class="item action">
+						<div class="label">&nbsp;</div>
+						<div class="field">
+							<button type="button" class="btn-primary" id="js-generate"><span>ОК</span></button>
+							<button type="button" class="btn-clear" id="js-clear"><span>Clear</span></button>
+							<button type="button" class="btn-clear" id="js-demo"><span>Demo</span></button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="fields">
+				<div class="col">
+					<div class="item urls">
+						<div class="label">
+							<label for="url-list">Список адресов</label>
+						</div>
+						<div class="field">
+							<textarea name="url-list" id="url-list" cols="100" rows="10" placeholder="https://example.test"></textarea>
+							<div class="note"><em>Каждый адрес на новой строке</em></div>
+						</div>
+					</div>
+				</div>
+				<div class="col">
+					<div class="item result">
+						<div class="label">
+							<label for="url-result">Результат</label>
+						</div>
+						<div class="field">
+							<textarea name="url-result" id="url-result" cols="100" rows="10" readonly></textarea>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	</main>
+
+	<script src="assets/js/app.js"></script>
+
+</body>
+</html>

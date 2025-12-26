@@ -1,0 +1,41 @@
+{
+	"root": true,
+	"env": {
+		"browser": true,
+		"es2020": true,
+		"node": true
+	},
+	"globals": {
+		"angular": true,
+		"jQuery": true,
+		"$": true,
+		"Modernizr": true,
+		"executeScript": true,
+		"__DEBUG__": true,
+		"notifyDeprecated": true,
+		"wsiApp": true, // deprecated, replaced by appLib
+		"wsiLinks": true, // deprecated, replaced by appLinks
+		"wsiCookie": true, // deprecated, replaced by appCookie
+		"wsiAjax": true, // deprecated, replaced by appAjax
+		"wsiDebug": true, // deprecated, replaced by appDebug
+		"wsiHttp": true, // deprecated, replaced by appHttp
+		"appLib": true, // previously wsiApp
+		"appLinks": true, // previously wsiLinks
+		"appCookie": true, // previously wsiCookie
+		"appAjax": true, // previously wsiAjax
+		"appDebug": true, // previously wsiDebug
+		"appHttp": true // previously wsiHttp
+	},
+	"extends": "eslint:recommended",
+	"parserOptions": {
+		"ecmaVersion": 11,
+		"sourceType": "script"
+	},
+	"rules": {
+		"no-unused-vars": "off",
+		"no-async-promise-executor": "off"
+	}
+	// 0 - off
+	// 1 - warn
+	// 2 - error
+}

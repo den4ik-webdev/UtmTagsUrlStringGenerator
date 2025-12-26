@@ -1,0 +1,44 @@
+{
+	"curly": true,
+	"eqeqeq": true,
+	"forin": true,
+	"nocomma": false,
+	"noempty": true,
+	"nonew": true,
+	"notypeof": false,
+	"shadow": "outer",
+	"strict": true,
+	"undef": true,
+	"unused": false,
+	"funcscope": false,
+
+	"evil": false,
+	"laxbreak": true,
+	"loopfunc": true,
+	"plusplus": false,
+	"sub": true,
+	"esversion": 9,
+
+	"browser": true,
+	"devel": true,
+	"jquery": true,
+
+	"globals": {
+		"Modernizr": true,
+		"wsiApp": true,
+		"appLib": true,
+		"Pace": true,
+		"SITE_HOSTNAME": true,
+		"SITE_TEMPLATE": true,
+		"FastAverageColor": true,
+		"xdLocalStorage": true,
+		"defer_ajax_send": true,
+		"cartChange": true,
+		"requestChange": true,
+		"supports_html5_storage": true,
+		"init_ajax_topcart": true,
+		"executeScript": true,
+		"Highcharts": true,
+		"site_template_url": true
+	}
+}
